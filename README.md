@@ -1,2 +1,0 @@
-# duygu
-im exploring
