@@ -1,0 +1,63 @@
+package sesliHarfler;
+
+public class miniProje2 {
+public static void main(String [] args) {
+
+char harf ='C';
+switch (harf) {
+case 'A':
+	System.out.println("kalın sesli harftir.");
+	break;
+case 'O':
+	System.out.println("kalın sesli harftir.");
+	break;
+case 'U':
+	System.out.println("kalın sesli harftir.");
+	break;
+case 'I':
+	System.out.println("kalın sesli harftir.");
+	break;
+	////////////////////////
+case 'E':
+	System.out.println("ince sesli harftir.");
+	break;
+case 'Ö':
+	System.out.println("ince sesli harftir.");
+	break;
+case 'Ü':
+	System.out.println("ince sesli harftir.");
+	break;	
+case 'İ':
+	System.out.println("ince sesli harftir.");
+	break;	
+}
+     
+ 
+
+//or u can do this:
+switch (harf) {
+case'A':
+case'O':
+case'U':
+case'I':
+	System.out.println("kalın sesli");
+ break;
+ //default:
+	//System.out.println("ince sesli");
+ 
+ 
+case 'E':
+case'Ö':
+case'Ü':
+case'İ':
+	System.out.println("ince sesli");
+	default:
+		System.out.println("sessiz harf");
+	
+}
+
+
+    }
+}
+	
+	
