@@ -1,0 +1,40 @@
+package miniProjeAsalSayı;
+
+public class newProject {
+
+	public static void main(String[] args) {
+	
+	int number = -10;
+	int remainder = number % 2;
+	System.out.println(remainder);
+	
+	 
+	boolean isPrime = true;
+	 //bug
+	 if(number<1) {
+	System.out.println("Gecersiz sayı.");
+	return;
+	 }
+	 if(number==1) {
+	System.out.println("sayı asal degıldır.");
+	return;
+	}
+	 
+	 for(int i = 2; i < number; i++) {
+		 if(number % i == 0) {
+			 isPrime= false;
+		 }
+	 }
+	 
+	 if(isPrime) {
+	 System.out.println("sayı asaldır.");
+	 }else {
+		 System.out.println("sayı asal degildir.");
+	 }
+	 
+	 
+	 }
+	}
+
+	
+
