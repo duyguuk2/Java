@@ -1,0 +1,48 @@
+package arkadasSayılar;
+
+public class miniProject4 {
+public static void main(String[] args) {
+	
+
+	int number1 = 220;
+	 int number2= 284;
+	 int total1=0;
+	 for(int i=1; i<number1; i++) {
+		 if(number1%i == 0) {
+			 total1= total1 + i;
+		 	
+		 
+		 }if(number2 == total1) {
+			System.out.println("Arkadaş sayılardır.");
+		 }
+	 	 	 
+	 }
+	 
+	 int sayı1= 220;
+	 int sayı2= 284;
+	 int toplam1=0;
+	 int toplam2=0;
+	
+	for(int i=1; i<sayı1;i++) {
+	if(sayı1 % i==0) {
+	toplam1 = toplam1+ i;
+	}
+	}
+	
+	for(int i=1; i<sayı2;i++) {
+		if(sayı2 % i==0) {
+		toplam2 = toplam2+ i;
+		}
+		}
+	if(sayı1==toplam2 && sayı2==toplam1) {
+	  System.out.println("--ARKADAS SAYILARDIR.--");	
+	}else {
+		System.out.println("---Arkadas sayı degıllerdir.--");
+	}
+	/// && : "ve" anlamına gelir.
+	
+	
+	
+  }	
+	
+}
