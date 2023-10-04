@@ -1,0 +1,96 @@
+//Main.java
+
+package inheritance;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Customer customer = new Customer() ;
+		Employee employee = new Employee () ;
+		
+		
+		
+		
+		CustomerManager customerManager = new CustomerManager ();
+		EmployeeManager employeeManager = new EmployeeManager ();
+		
+		customerManager.List();
+		employeeManager.Add()	;
+
+	}
+}
+
+//Person.java
+
+package inheritance;
+
+public class Person {
+	int id;
+	String firstName;
+	String lastName;
+}
+
+//PersonManager.java
+
+package inheritance;
+
+public class PersonManager {
+	public void Add() {
+		System.out.println("Eklendi.");
+		
+	}
+	
+	public void List() {
+		System.out.println("Listelendi.");
+		
+	}
+}
+
+
+//Customer.java
+
+package inheritance;
+
+public class Customer extends Person{
+	
+	
+	 String email;
+}
+
+//CustomerManager.java
+
+package inheritance;
+
+public class CustomerManager extends PersonManager{
+   
+	
+}
+
+//Employee.java
+
+package inheritance;
+
+public class Employee extends Person {
+	
+	   int age;
+	   double salary;
+}
+
+//EmployeeManager.java
+
+package inheritance;
+
+public class EmployeeManager extends PersonManager{
+
+	
+	
+	
+	public void BestEmployee() {
+		System.out.println("Yılın elemanı secildi.");
+		
+	}
+	
+}
+
+
+//
