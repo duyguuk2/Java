@@ -1,0 +1,29 @@
+//DortIslem.java
+
+public class DortIslem {
+ 
+	public int topla(int sayi1, int sayi2) {
+		return sayi1 + sayi2;
+	}
+	
+	public int topla(int sayi1, int sayi2, int sayi3) {
+		return sayi1 + sayi2 + sayi3;
+	}
+	   }
+
+
+//MethodOverloading.java
+
+	public class MethodOverloading {
+
+	public static void main(String[] args) {
+		DortIslem dortIslem = new DortIslem();
+		System.out.println(dortIslem.topla(5, 6));
+		
+		 int toplam =dortIslem.topla(3, 5,7) ;
+		 System.out.println(toplam);
+		 
+		System.out.println(dortIslem.topla(5, 5,7));
+	}
+
+}
