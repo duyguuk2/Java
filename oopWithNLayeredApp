@@ -1,0 +1,151 @@
+package oopWithNLayeredApp.business;
+
+import java.util.List;
+
+import oopWithNLayeredApp.core.logging.Logger;
+import oopWithNLayeredApp.dataAccess.HibernateProductDao;
+import oopWithNLayeredApp.dataAccess.JdbcProductDao;
+import oopWithNLayeredApp.dataAccess.ProductDao;
+import oopWithNLayeredApp.entities.Product;
+
+public class ProductManager {
+	private ProductDao productDao;
+	private Logger [] loggers;  // = List<Logger>loggers
+
+	public ProductManager(ProductDao productDao, Logger [] loggers ) {
+		this.productDao = productDao;
+		this.loggers = loggers;
+	}
+
+	public void add(Product product) throws Exception {
+		// iş kuralları
+		if (product.getUnitPrice() < 10) {
+			throw new Exception("Ürün fiyatı 10 dan küçük olamaz.");
+		}
+		productDao.add(product);
+		
+		for (Logger logger : loggers) {  //[db,mail]
+			logger.log(product.getName());
+		}
+
+	}
+}
+
+package oopWithNLayeredApp.dataAccess;
+
+import oopWithNLayeredApp.entities.Product;
+
+public interface ProductDao {
+void add(Product product);
+}
+
+package oopWithNLayeredApp.dataAccess;
+
+import oopWithNLayeredApp.entities.Product;
+
+public class HibernateProductDao implements ProductDao {
+	public void add(Product product) {
+		// sadece ve sadece db erişim kodları buraya yazılır... SQL
+		System.out.println("Hibernate ile veri tabanına eklendi.");
+	}
+}
+
+package oopWithNLayeredApp.dataAccess;
+
+import oopWithNLayeredApp.entities.Product;
+
+public class JdbcProductDao implements ProductDao{
+    public void add(Product product) {
+    	// sadece ve sadece db erişim kodları buraya yazılır... SQL
+    	System.out.println("JDBC ile veri tabanına eklendi.");
+    	
+    }
+}
+
+
+package oopWithNLayeredApp.entities;
+
+public class Product {
+	private int id;
+	private String name;
+	private double unitPrice;
+	
+	
+	public Product() {
+		
+	}
+	
+	public Product(int id, String name, double unitPrice) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.unitPrice = unitPrice;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getUnitPrice() {
+		return unitPrice;
+	}
+	public void setUnitPrice(double unitPrice) {
+		this.unitPrice = unitPrice;
+	}
+	
+
+}
+
+System.out.println("------------------------");
+
+package oopWithNLayeredApp.core.logging;
+
+public interface Logger {
+void log(String data);
+}
+
+
+package oopWithNLayeredApp.core.logging;
+
+public class DataBaseLogger implements Logger {
+
+	@Override
+	public void log(String data) {
+		System.out.println("Veri tabanına loglandı : " + data);	
+		
+	}
+
+}
+
+package oopWithNLayeredApp.core.logging;
+
+public class FileLogger implements Logger{
+	@Override
+	public void log(String data) {
+	System.out.println("Dosyaya loglandı : " + data);	
+		
+	}
+
+}
+
+
+package oopWithNLayeredApp.core.logging;
+
+public class MailLogger implements Logger {
+
+	@Override
+	public void log(String data) {
+		System.out.println("Mail gönderildi : " + data);	
+		
+	}
+
+}
+
