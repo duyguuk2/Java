@@ -10,9 +10,7 @@ public class Main {
 		
 System.out.println("Hello World!");
         
-        
-        System.out.println("DOĞUM GÜNÜN KUTLU OLSUN YILIN EN İYİ ABLASI!!");
-		
+      
 		//değişken isimlendirmeleri java'da camelCase yazılır
 	    String ortaMetin = "İlginizi çekebilir";
 		String altMetin = "Vade süresi";
